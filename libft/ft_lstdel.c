@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 02:04:48 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/01/29 04:29:57 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+void ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
-    else
+    t_list *tmp;
+    t_list *next;
+
+    if (alst == NULL || del == NULL)
+        return;
+    tmp = *alst;
+    while(tmp)
     {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
+        next = tmp->next;
+        del(tmp->content, tmp->content_size);
+        free(tmp);
+        tmp = next;
     }
-    
-    
-    }
-    int fd;
+    *alst = NULL;
 }

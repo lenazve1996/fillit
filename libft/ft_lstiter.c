@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 02:36:32 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/01/29 05:02:37 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+void    ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
-    else
+    t_list *tmp;
+
+    if (lst == NULL || f == NULL)
+        return;
+    tmp = lst;
+    while(tmp)
     {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
+        f(tmp);
+        tmp = tmp->next;
     }
-    
-    
-    }
-    int fd;
 }

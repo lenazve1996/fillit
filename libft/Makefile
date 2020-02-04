@@ -11,7 +11,8 @@ ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c \
 ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putchar.c ft_strstr.c \
 ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar.c ft_putendl.c \
 ft_putnbr.c ft_putstr.c ft_putchar_fd.c ft_putstr_fd.c ft_strnstr.c \
-ft_putendl_fd.c ft_putnbr_fd.c ft_cleaning.c ft_strcmp.c ft_strrchr.c ft_strjoindup.c
+ft_putendl_fd.c ft_putnbr_fd.c ft_cleaning.c ft_strcmp.c ft_strrchr.c ft_strjoindup.c \
+ft_lstnew.c ft_lstdelone.c ft_lstadd.c ft_lstdel.c ft_lstiter.c ft_lstmap.c ft_lstpush_back.c
 OB = $(SRC:.c=.o)
 
 all: $(NAME)

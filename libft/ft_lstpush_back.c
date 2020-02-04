@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstpush_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 02:54:47 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/02/04 03:43:35 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+t_list		*ft_lstpush_back(t_list **alst, t_list *new)
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
-    else
-    {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
-    }
-    
-    
-    }
-    int fd;
+	t_list	*tmp;
+
+	if (new == NULL)
+		return (new);
+	if (alst == NULL)
+	{
+		ft_lstadd(alst, new);
+		return (new);
+	}
+	tmp = *alst;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = new;
+	return (tmp);
 }

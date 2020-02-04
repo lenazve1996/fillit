@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 02:23:24 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/01/29 03:53:20 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+void ft_lstadd(t_list **alst, t_list *new)
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
+    if (new == NULL)
+        return;
+    if (alst == NULL)
+        alst = &new;
     else
     {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
+    new->next = *alst;
+    *alst = new;
     }
-    
-    
-    }
-    int fd;
 }

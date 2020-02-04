@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 02:43:03 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/01/29 04:56:37 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+t_list  *ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
-    else
+    t_list *tmp;
+    t_list *new;
+    t_list *new_head;
+
+    if(lst == NULL || f == NULL)
+        return (NULL);
+    tmp = lst;
+    if (!(new_head = f(tmp)))
+        return (NULL);
+    new = new_head;
+    while(tmp->next)
     {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
+        new->next = f(tmp->next);
+        new = new->next;
+        tmp = tmp->next;
     }
-    
-    
-    }
-    int fd;
+    return(new_head);
 }

@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 16:09:24 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:01 by ayajirob         ###   ########.fr       */
+/*   Created: 2020/01/29 01:29:50 by ayajirob          #+#    #+#             */
+/*   Updated: 2020/01/29 03:59:21 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+void ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-    int fd;
-    if (ac != 2)
-        {
-            ft_putstr("usage: fillit [filename]");
-        }
-    else
-    {
-        if((fd = open(O_RDONLY, av[1])) > 0)
-        {
-            
-        }
-    }
-    
-    
-    }
-    int fd;
+    if (alst == NULL || del == NULL)
+        return;
+    del((*alst)->content, (*alst)->content_size);
+    free(*alst);
+    *alst = NULL;
 }
