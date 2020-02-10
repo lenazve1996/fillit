@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 16:10:05 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/02/10 03:27:23 by ayajirob         ###   ########.fr       */
+/*   Updated: 2020/02/10 06:36:53 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ typedef struct  s_tetra
 
 t_list         *read_tetra(int fd);
 int            check_buf(char  *buf);
+t_list         *list_del(t_list *list);
+void           set_letter(t_list *list);
 #endif

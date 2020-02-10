@@ -10,6 +10,8 @@
             "args": [
                 "-g",
                 "${workspaceFolder}/reader.c",
+                "${workspaceFolder}/checker.c",
+                "${workspaceFolder}/utils.c",
                 "-o",
                 "${workspaceFolder}/test",
                 "-L",
