@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 16:41:10 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/02/04 04:38:03 by ayajirob         ###   ########.fr       */
+/*   Updated: 2020/02/10 03:27:22 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,11 @@ t_list		*read_tetra(int fd)
 			return(NULL);
 	while (read(fd, buf, BUFF_SIZE))
 	{
+		if(!check_buf(buf))
+		{
+			ft_putstr("Invalid shape\n\n");
+			return(head);
+		}
 		if(head == NULL)
 			head = ft_lstnew(create_tetra(buf), sizeof(t_tetra));
 		else

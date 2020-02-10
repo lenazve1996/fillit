@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 16:10:05 by ayajirob          #+#    #+#             */
-/*   Updated: 2020/02/04 04:05:47 by ayajirob         ###   ########.fr       */
+/*   Updated: 2020/02/10 03:27:23 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ typedef struct  s_tetra
 }               t_tetra;
 
 t_list         *read_tetra(int fd);
+int            check_buf(char  *buf);
 #endif
